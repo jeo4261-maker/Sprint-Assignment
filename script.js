@@ -6,13 +6,13 @@ const MAX_CREDITS = 18;
 // Load courses from JSON file
 async function loadCourses() {
     try {
-        const response = await fetch('rit_courses__1_.json');
+        const response = await fetch('courses.json');
         const data = await response.json();
         coursesData = data.courses;
         displayCourses();
     } catch (error) {
         console.error('Error loading courses:', error);
-        document.getElementById('coursesList').innerHTML = '<p style="color: #ff6600; text-align: center;">Error loading courses. Please make sure the JSON file is in the same directory.</p>';
+        document.getElementById('coursesList').innerHTML = '<p style="color: #ff6600; text-align: center;">Error loading courses. Please make sure the courses.json file is in the same directory.</p>';
     }
 }
 
